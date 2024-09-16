@@ -4,26 +4,26 @@
 
 @font-face {
   font-family: 'DosisBold';
-  src: url('../../blomo/app/fonts/DosisFont/Dosis-Bold.woff2') format('woff2'),
-    url('../../blomo/app/fonts/DosisFont/Dosis-Bold.woff') format('woff');
+  src: url('../app/fonts/DosisFont/Dosis-Bold.woff2') format('woff2'),
+    url('../app/fonts/DosisFont/Dosis-Bold.woff') format('woff');
   /* Add additional src lines for other formats if necessary */
 }
 @font-face {
   font-family: 'DosisLight';
-  src: url('../../blomo/app/fonts/DosisFont/Dosis-Light.woff2') format('woff2'),
-    url('../../blomo/app/fonts/DosisFont/Dosis-Light.woff') format('woff');
+  src: url('../app/fonts/DosisFont/Dosis-Light.woff2') format('woff2'),
+    url('../app/fonts/DosisFont/Dosis-Light.woff') format('woff');
   /* Add additional src lines for other formats if necessary */
 }
 @font-face {
   font-family: 'DosisSemiBold';
-  src: url('../../blomo/app/fonts/DosisFont/Dosis-SemiBold.woff2') format('woff2'),
-    url('../../blomo/app/fonts/DosisFont/Dosis-SemiBold.woff') format('woff');
+  src: url('../app/fonts/DosisFont/Dosis-SemiBold.woff2') format('woff2'),
+    url('../app/fonts/DosisFont/Dosis-SemiBold.woff') format('woff');
   /* Add additional src lines for other formats if necessary */
 }
 @font-face {
   font-family: 'DosisMedium';
-  src: url('../../blomo/app/fonts/DosisFont/Dosis-Medium.woff2') format('woff2'),
-    url('../../blomo/app/fonts/DosisFont/Dosis-Medium.woff') format('woff');
+  src: url('../app/fonts/DosisFont/Dosis-Medium.woff2') format('woff2'),
+    url('../app/fonts/DosisFont/Dosis-Medium.woff') format('woff');
   /* Add additional src lines for other formats if necessary */
 }
 html,
