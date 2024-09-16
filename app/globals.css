@@ -1,0 +1,197 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'DosisBold';
+  src: url('../../blomo/app/fonts/DosisFont/Dosis-Bold.woff2') format('woff2'),
+    url('../../blomo/app/fonts/DosisFont/Dosis-Bold.woff') format('woff');
+  /* Add additional src lines for other formats if necessary */
+}
+@font-face {
+  font-family: 'DosisLight';
+  src: url('../../blomo/app/fonts/DosisFont/Dosis-Light.woff2') format('woff2'),
+    url('../../blomo/app/fonts/DosisFont/Dosis-Light.woff') format('woff');
+  /* Add additional src lines for other formats if necessary */
+}
+@font-face {
+  font-family: 'DosisSemiBold';
+  src: url('../../blomo/app/fonts/DosisFont/Dosis-SemiBold.woff2') format('woff2'),
+    url('../../blomo/app/fonts/DosisFont/Dosis-SemiBold.woff') format('woff');
+  /* Add additional src lines for other formats if necessary */
+}
+@font-face {
+  font-family: 'DosisMedium';
+  src: url('../../blomo/app/fonts/DosisFont/Dosis-Medium.woff2') format('woff2'),
+    url('../../blomo/app/fonts/DosisFont/Dosis-Medium.woff') format('woff');
+  /* Add additional src lines for other formats if necessary */
+}
+html,
+body,
+:root{
+  height: 100%;
+  font-family: "DosisMedium";
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --purple-50: #fbf4fd;
+    --purple-100: #f2d8f9;
+    --purple-200: #e9bcf4;
+    --purple-300: #e0a0ef;
+    --purple-400: #d684eb;
+    --purple-500: #cd68e6;
+    --purple-600: #a755bb;
+    --purple-700: #814291;
+    --purple-800: #5b2e66;
+    --purple-900: #351b3c;
+    --purple-950: #0f0811;
+    --blue-50: #f1faff;
+    --blue-100: #d0eefe;
+    --blue-200: #aee2fd;
+    --blue-300: #8dd6fc;
+    --blue-400: #6bcafb;
+    --blue-500: #4abefa;
+    --blue-600: #3c9bcc;
+    --blue-700: #2f789e;
+    --blue-800: #21556f;
+    --blue-900: #133141;
+    --blue-950: #060e13;
+    --green-50: #eefaf3;
+    --green-100: #c4ecd7;
+    --green-200: #9adfba;
+    --green-300: #70d29d;
+    --green-400: #46c481;
+    --green-500: #1cb764;
+    --green-600: #179552;
+    --green-700: #12733f;
+    --green-800: #0c512c;
+    --green-900: #07301a;
+    --green-950: #020e07;
+    --red-50: #fef2f0;
+    --red-100: #fbd4cc;
+    --red-200: #f7b5a7;
+    --red-300: #f49682;
+    --red-400: #f1775e;
+    --red-500: #ee5839;
+    --red-600: #c2482e;
+    --red-700: #963724;
+    --red-800: #6a2719;
+    --red-900: #3e170f;
+    --red-950: #120704;
+    --yellow-50: #fffaf0;
+    --yellow-100: #feedca;
+    --yellow-200: #fee0a5;
+    --yellow-300: #fed37f;
+    --yellow-400: #fdc65a;
+    --yellow-500: #fdb933;
+    --yellow-600: #ce972b;
+    --yellow-700: #9f7521;
+    --yellow-800: #715217;
+    --yellow-900: #42300e;
+    --yellow-950: #130e04;
+    --gray-900: #0e1219;
+    --gray-800: #11161e;
+    --gray-700: #1a1f29;
+    --gray-600: #242b37;
+    --gray-500: #3c4451;
+    --gray-400: #9aa1ab;
+    --gray-300: #e3e5e9;
+    --gray-200: #eeefef;
+    --gray-100: #f5f5f5;
+    --gray-50: #fafafa;
+    --gray-25: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "DosisLight";
+  font-weight: 500;
+}
+
+
+h1{
+  font-family: "DosisBold";
+  color:  #475569;
+  font-size: 4rem;
+
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
