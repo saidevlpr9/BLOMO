@@ -172,8 +172,8 @@ const LandingPage = () => {
                 </div>
               </CarouselItem>
             </CarouselContent>
-            <CarouselPrevious className="bg-black" />
-            <CarouselNext className="bg-black" />
+            <CarouselPrevious className="bg-black max-sm:hidden" />
+            <CarouselNext className="bg-black max-sm:hidden" />
           </Carousel>
         </div>
       </div>

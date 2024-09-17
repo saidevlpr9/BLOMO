@@ -9,6 +9,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
+import  AlertDialog  from "../myCustomComponents/alertDialog";
 const DonorData = [
   {
     donorId: "D001",
@@ -93,7 +94,7 @@ const donorsTable = () => {
               <TableCell className="text-end">{DonorData.availability}</TableCell>
               <TableCell className="text-end">{DonorData.distance}</TableCell>
               <TableCell className="text-right">
-                <Button className="hover:[#8A0303]">Request</Button>
+                <AlertDialog/>
               </TableCell>
             </TableRow>
           ))}
