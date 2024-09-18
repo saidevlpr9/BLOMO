@@ -12,7 +12,13 @@ const UserDashboardPage = () => {
           <Input  type="email" placeholder="Search for BloodType,Location or any related Keywords....." />
           <Button type="submit" className="max-sm:hover:bg-[#8A0303]">Search</Button>
         </div>
+        
       </div>
+      <div className="flex justify-end -mt-7">
+        <Button className="max-sm:hover:bg-[#8A0303] m-3">Post A Blog</Button>
+        
+        <Button className="max-sm:hover:bg-[#8A0303] m-3">Conduct A Camp</Button>
+        </div>
       <DonorsTable/>
       <div className="mt-6 "></div>
       <Pagination/>
