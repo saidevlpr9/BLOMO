@@ -21,11 +21,11 @@ export default function footer() {
         </div>
         <div className="flex justify-end items-end bg-[black]">
           <div
-            className="flex gap-3 text-lg hover:cursor-pointer p-1 pr-6"
+            className="flex gap-3 text-lg hover:cursor-pointer p-1 "
             style={{ fontFamily: "DosisMedium" }}
           >
-            <a href="#aboutUs">About Us</a>
-            <a href="#howItWorks">How It Works</a>
+            <a href="#aboutUs" className="max-sm:hidden">About Us</a>
+            <a href="#howItWorks" className="max-sm:hidden">How It Works</a>
             <a href="/blogs">Blog</a>
             <a href="/contact">Contact</a>
             <a href="/privacyPolicy">Privacy Policy</a>

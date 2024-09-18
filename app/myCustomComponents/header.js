@@ -16,7 +16,7 @@ export default function Headers(){
     style={{
       fontFamily: "DosisMedium",
     }}
-    className="h-auto w-auto p-3 flex justify-center items-center font-medium bg-[#8A0303] "
+    className="h-auto w-auto p-3 flex justify-center items-center font-medium bg-[#8A0303] max-sm:-ml-2"
   >
     <NavigationMenu>
       <NavigationMenuList>
@@ -34,6 +34,12 @@ export default function Headers(){
               Mission Link
             </NavigationMenuLink>
           </NavigationMenuContent> */}
+        </NavigationMenuItem>
+        <NavigationMenuItem>
+          <NavigationMenuLink className="text-lg ml-6" href="/blogs">
+            Blogs
+
+          </NavigationMenuLink>
         </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuLink className="text-lg ml-6" href='#aboutUs'>About Us</NavigationMenuLink>
