@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
+import SessionWrapper from "./myCustomComponents/sessionWrapper"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,12 +16,12 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title:{
-    default:siteConfig.name,
-    template:`%s|${siteConfig.name}`
+  title: {
+    default: siteConfig.name,
+    template: `%s|${siteConfig.name}`,
   },
-  description:siteConfig.description
-}
+  description: siteConfig.description,
+};
 
 export default function RootLayout({
   children,
@@ -29,11 +30,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <SessionWrapper>
+
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
+      </SessionWrapper>
     </html>
   );
 }
