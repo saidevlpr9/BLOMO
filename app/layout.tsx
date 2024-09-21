@@ -3,7 +3,8 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
 import SessionWrapper from "./myCustomComponents/sessionWrapper"
-
+import Headers from "./myCustomComponents/header";
+import Footer from "./myCustomComponents/footer";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -30,14 +31,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <SessionWrapper>
+
 
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>
-      </SessionWrapper>
+
     </html>
   );
 }
