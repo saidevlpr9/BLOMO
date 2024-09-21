@@ -1,7 +1,4 @@
 import React from "react";
-import nextAuth from "next-auth";
-import { SessionProvider } from "next-auth/react";
-import { Session } from "inspector/promises";
 import Footer from "../myCustomComponents/footer";
 import Header from "../myCustomComponents/header";
 const LandingLayout = ({ children }: { children: React.ReactNode }) => {
