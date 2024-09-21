@@ -44,7 +44,9 @@ export default function Headers() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        <Button onClick={signOut}>LogOut</Button>
+        <Link href="/">
+        <Button >LogOut</Button>
+        </Link>
       </div>
     </>
   );
