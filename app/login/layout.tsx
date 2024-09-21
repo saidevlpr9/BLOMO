@@ -1,24 +1,18 @@
-import React from "react";
-import Header from "../myCustomComponents/header";
+import React from "react"
+import SessionWrapper from "../myCustomComponents/sessionWrapper"
+import Headers from "../myCustomComponents/header"
 import Footer from "../myCustomComponents/footer"
-const LoginLayout = ({ children }: { children: React.ReactNode }) => {
-
-  return (
+const LoginLayout = ({children}:{children:React.ReactNode})=>{
+  return(
     <>
-    <>
-    <div className="bg-[#FDFDFD]">
-    <Header/>
-    
-    <div className="h-full bg-[#FDFDFD]  text-lg m-20" style={{fontFamily:"DosisMedium"}}>
-        <main className="bg-[#FDFDFD]">
-          {children}
-        </main>
-        
-      </div>
-      <Footer/>
-      </div>
-      </>
+    <Headers/>
+    <main className="h-full bg-[#FDFDFD] p-10">
+      <SessionWrapper>
+      {children}
+      </SessionWrapper>
+    </main>
+    <Footer/>
     </>
-  );
-};
-export default LoginLayout;
+  )
+}
+export default LoginLayout

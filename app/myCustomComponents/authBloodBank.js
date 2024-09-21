@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "../../components/ui/badge";
 import { Checkbox } from "../../components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -99,7 +100,7 @@ const AuthBloodBank = () => {
                 <Label htmlFor="email">Email</Label>
                 <Input
                   id="email"
-                  value={email} 
+                  value={email}
                   placeholder="Enter your Email"
                   required
                   onChange={(e) => setEmail(e.target.value)}
@@ -129,7 +130,7 @@ const AuthBloodBank = () => {
                 <Label htmlFor="address">Blood Bank Address</Label>
                 <Textarea
                   id="address"
-                  value={address} 
+                  value={address}
                   placeholder="Enter your address"
                   onChange={(e) => setAddress(e.target.value)}
                 />
@@ -139,7 +140,7 @@ const AuthBloodBank = () => {
                 <Input
                   id="password"
                   type="password"
-                  value={password} 
+                  value={password}
                   placeholder="Enter your password"
                   required
                   onChange={(e) => setPassword(e.target.value)}
@@ -156,11 +157,20 @@ const AuthBloodBank = () => {
               </div>
             </div>
             <CardFooter className="flex justify-between mt-3">
+              <Link href="/">
               <Button variant="outline" type="button">
                 Cancel
               </Button>
+              </Link>
               <Button type="submit">Register</Button>
             </CardFooter>
+            <CardDescription>
+              If already registered,{" "}
+              <a href="/login" className="text-blue-500 underline">
+                click here to sign in
+              </a>
+              .
+            </CardDescription>
           </form>
         </CardContent>
       </Card>

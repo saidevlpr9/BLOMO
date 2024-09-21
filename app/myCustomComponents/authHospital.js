@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -74,7 +75,9 @@ const AuthHospitals = () => {
   return (
     <Card className="w-[350px] border-t-0 rounded-t-none">
       <CardHeader>
-        <CardTitle>Create An Account For <span className="text-[#8A0303]">Hospital</span></CardTitle>
+        <CardTitle>
+          Create An Account For <span className="text-[#8A0303]">Hospital</span>
+        </CardTitle>
         <CardDescription>Be a Blomo Hero: Save lives</CardDescription>
       </CardHeader>
       <CardContent>
@@ -151,11 +154,20 @@ const AuthHospitals = () => {
             </div>
           </div>
           <CardFooter className="flex justify-between mt-3">
-            <Button variant="outline" type="button">
-              Cancel
-            </Button>
+            <Link href="/">
+              <Button variant="outline" type="button">
+                Cancel
+              </Button>
+            </Link>
             <Button type="submit">Register</Button>
           </CardFooter>
+          <CardDescription>
+            If already registered,{" "}
+            <a href="/login" className="text-blue-500 underline">
+              click here to sign in
+            </a>
+            .
+          </CardDescription>
         </form>
       </CardContent>
     </Card>

@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
+import Link from "next/link";
 import {
   Card,
   CardContent,
@@ -57,7 +58,7 @@ const AuthDonor = () => {
           phone,
           bloodGroup,
           address,
-          password
+          password,
         }),
       });
 
@@ -81,7 +82,9 @@ const AuthDonor = () => {
   return (
     <Card className="w-[350px] border-t-0 rounded-t-none">
       <CardHeader>
-        <CardTitle>Create An Account For <span className="text-[#8A0303]">Donor</span></CardTitle>
+        <CardTitle>
+          Create An Account For <span className="text-[#8A0303]">Donor</span>
+        </CardTitle>
         <CardDescription>Be a Blomo Hero: Save lives</CardDescription>
       </CardHeader>
       <CardContent>
@@ -119,10 +122,7 @@ const AuthDonor = () => {
             </div>
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="bloodGroup">Select Your Blood Group</Label>
-              <Select
-                required
-                onValueChange={(value) => setBloodGroup(value)}
-              >
+              <Select required onValueChange={(value) => setBloodGroup(value)}>
                 <SelectTrigger id="bloodGroup" className="text-black">
                   <SelectValue placeholder="Select Blood Group" />
                 </SelectTrigger>
@@ -170,11 +170,20 @@ const AuthDonor = () => {
             </div>
           </div>
           <CardFooter className="flex justify-between mt-3">
-            <Button variant="outline" type="button">
-              Cancel
-            </Button>
+            <Link href="/">
+              <Button variant="outline" type="button">
+                Cancel
+              </Button>
+            </Link>
             <Button type="submit">Register</Button>
           </CardFooter>
+          <CardDescription>
+            If already registered,{" "}
+            <a href="/login" className="text-blue-500 underline">
+              click here to sign in
+            </a>
+            .
+          </CardDescription>
         </form>
       </CardContent>
     </Card>
