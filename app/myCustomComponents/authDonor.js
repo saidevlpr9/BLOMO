@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
-import FileUpload from "../myCustomComponents/uploadFile"; // Corrected the import name
 import {
   Card,
   CardContent,
