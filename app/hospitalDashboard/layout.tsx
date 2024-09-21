@@ -10,9 +10,9 @@ const UserDashboardLayout = ({children}:{
 
     <Headers/>
     <main  className="h-auto bg-slate-100 pb-14 text-lg pt-14" style={{fontFamily:"DosisMedium"}}>
-      <SessionWrapper>
+      {/* <SessionWrapper> */}
     {children}
-    </SessionWrapper>
+    {/* </SessionWrapper> */}
     </main>
     <Footer/>
     </>

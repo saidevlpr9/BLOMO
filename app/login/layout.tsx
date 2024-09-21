@@ -7,9 +7,9 @@ const LoginLayout = ({children}:{children:React.ReactNode})=>{
     <>
     <Headers/>
     <main className="h-full bg-[#FDFDFD] p-10">
-      <SessionWrapper>
+      {/* <SessionWrapper> */}
       {children}
-      </SessionWrapper>
+      {/* </SessionWrapper> */}
     </main>
     <Footer/>
     </>

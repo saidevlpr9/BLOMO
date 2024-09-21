@@ -98,6 +98,10 @@ const Login: React.FC = () => {
           </form>
         </CardContent>
       </Card>
+      <div className="">
+        
+
+      </div>
     </div>
   );
 };
