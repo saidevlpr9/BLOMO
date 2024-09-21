@@ -131,11 +131,11 @@ const Login: React.FC = () => {
   const router = useRouter();
 
   // Dummy credentials for redirection
-  const hospitalEmail = "texthospital@gmail.com";
+  const hospitalEmail = "testhospital@gmail.com";
   const hospitalPassword = "testhospital@888";
-  const donorEmail = "textdonor@gmail.com";
+  const donorEmail = "testdonor@gmail.com";
   const donorPassword = "testdonor@888";
-  const bloodBankEmail = "textbloodbank@gmail.com";
+  const bloodBankEmail = "testbloodbank@gmail.com";
   const bloodBankPassword = "testbloodbank@888";
 
   const handleLogin = (e: React.FormEvent) => {
@@ -160,7 +160,7 @@ const Login: React.FC = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center h-full text-black">
+      <div className="flex justify-center items-center h-full text-black max-sm:flex-col">
         <Card className="w-[350px] text-black text-3xl">
           <CardHeader>
             <CardTitle className="text-black text-3xl">Login</CardTitle>
@@ -209,20 +209,20 @@ const Login: React.FC = () => {
             </form>
           </CardContent>
         </Card>
-        <div className="text-black ml-36 -mr-80">
+        <div className="text-black ml-36 -mr-80 max-sm:mr-0 max-sm:ml-0 max-sm:mt-10">
           <div className="mb-10">
             <p>Credentials for Hospital Dashboard</p>
-            <p>texthospital@gmail.com</p>
+            <p>testhospital@gmail.com</p>
             <p>testhospital@888</p>
           </div>
           <div className="mb-10">
             <p>Credentials for Donor Dashboard</p>
-            <p>textdonor@gmail.com</p>
+            <p>testdonor@gmail.com</p>
             <p>testdonor@888</p>
           </div>
           <div className="mb-10">
             <p>Credentials for BloodBank Dashboard</p>
-            <p>textbloodbank@gmail.com</p>
+            <p>testbloodbank@gmail.com</p>
             <p>testbloodbank@888</p>
           </div>
         </div>

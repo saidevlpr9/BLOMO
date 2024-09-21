@@ -9,8 +9,6 @@ import {
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-import Avatar from "../myCustomComponents/avatar";
-
 export default function Headers() {
   return (
     <>
@@ -18,7 +16,7 @@ export default function Headers() {
         style={{
           fontFamily: "DosisMedium",
         }}
-        className="h-auto w-auto p-3 flex justify-center items-center font-medium bg-[#8A0303] max-sm:-ml-2 gap-96"
+        className="h-auto w-auto p-3 flex justify-center items-center font-medium bg-[#8A0303]  max-sm:-ml-2 max-sm:gap-3"
       >
         <NavigationMenu>
           <NavigationMenuList>
@@ -44,9 +42,12 @@ export default function Headers() {
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
+        <div className="right-10 absolute">
         <Link href="/">
+
         <Button >LogOut</Button>
         </Link>
+        </div>
       </div>
     </>
   );
