@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
-
+import { Toaster } from "@/components/ui/toaster"
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,11 +21,17 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: {
     default: siteConfig.name,
-    template: `%s|${siteConfig.name}`,
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
 };
-const LandingLayout = ({ children }: { children: React.ReactNode }) => {
+
+interface LayoutProps {
+  children: React.ReactNode;
+  types?: string; // Assuming `types` is optional
+}
+
+const LandingLayout = ({ children, types }: LayoutProps) => {
   return (
     <html lang="en">
       <body>
@@ -35,15 +41,14 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
           className="h-auto bg-[#FDFDFD] pb-24 text-lg"
           style={{ fontFamily: "DosisMedium" }}
         >
-          {/* <Toaster position="bottom-center" /> */}
           <main>{children}</main>
         </div>
 
         <Footer />
+        <Toaster />
       </body>
     </html>
   );
 };
 
 export default LandingLayout;
-

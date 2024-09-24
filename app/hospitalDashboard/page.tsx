@@ -12,7 +12,7 @@ const UserDashboardPage = () => {
         Available Donors
       </h1>
       <div className="flex justify-start m-10 w-full ">
-        <div className="flex w-full max-w-sm items-center space-x-2 text-black border-black max-sm:mr-10 ">
+        {/* <div className="flex w-full max-w-sm items-center space-x-2 text-black border-black max-sm:mr-10 ">
           <Input
             type="email"
             placeholder="Search for BloodType,Location or any related Keywords....."
@@ -20,7 +20,7 @@ const UserDashboardPage = () => {
           <Button type="submit" className="max-sm:hover:bg-[#8A0303]">
             Search
           </Button>
-        </div>
+        </div> */}
       </div>
       <div className="flex justify-end -mt-7 max-sm:mr-5">
         <div className="max-sm:hover:bg-[#8A0303] m-3">

@@ -10,7 +10,9 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { useToast } from "../../hooks/use-toast";
+
+import { useToast } from "@/hooks/use-toast"
+
 import { Button } from "../../components/ui/button";
 import { ToastAction } from "../../components/ui/toast";
 export default function AlertDialogDemo() {
