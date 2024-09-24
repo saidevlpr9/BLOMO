@@ -7,15 +7,15 @@ const SignupLayout = ({ children }: { children: React.ReactNode }) => {
     <>
     <>
     <div className="bg-[#FDFDFD]">
-    <Header/>
+
     
-    <div className="h-full bg-[#FDFDFD]  text-lg m-20" style={{fontFamily:"DosisMedium"}}>
+    <div className="h-full bg-[#FDFDFD]  text-lg pt-20" style={{fontFamily:"DosisMedium"}}>
         <main className="bg-[#FDFDFD]">
           {children}
         </main>
         
       </div>
-      <Footer/>
+
       </div>
       </>
     </>

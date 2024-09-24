@@ -1,6 +1,6 @@
 'use client'
 import { Medal } from "lucide-react";
-import  {HoverEffect}  from "../../components/ui/card-hover-effect";
+import  {HoverEffect}  from "./../components/ui/card-hover-effect";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import dashBoard from "../assets/demoDashBoard.jpeg";
+import dashBoard from "./assets/demoDashBoard.jpeg";
 import {
   Carousel,
   CarouselContent,
@@ -21,19 +21,19 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { Card } from "../myCustomComponents/card";
+import { Card } from "./myCustomComponents/card";
 import Link from "next/link";
 import {
   LongHorizontalCardLeft,
   LongHorizontalCardRight,
-} from "../myCustomComponents/longHorizontalcard";
-import request from "../assets/request.png";
-import bloodBank from "../assets/bloodBank.png";
-import connect from "../assets/connect.png";
-import exchange from "../assets/exchange.png";
-import lifeSaving from "../assets/lifeSaving.png";
+} from "./myCustomComponents/longHorizontalcard";
+import request from "./assets/request.png";
+import bloodBank from "./assets/bloodBank.png";
+import connect from "./assets/connect.png";
+import exchange from "./assets/exchange.png";
+import lifeSaving from "./assets/lifeSaving.png";
 import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
-import { TypewriterEffectSmooth } from "../../components/ui/typewriter-effect";
+import { TypewriterEffectSmooth } from "./../components/ui/typewriter-effect";
 
 
 
