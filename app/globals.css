@@ -32,6 +32,9 @@ body,
   height: 100%;
   font-family: "DosisMedium";
 }
+html {
+  scroll-behavior: smooth;
+}
 
 :root {
   --background: #ffffff;

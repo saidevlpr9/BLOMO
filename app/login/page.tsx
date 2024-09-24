@@ -200,7 +200,7 @@ const Login: React.FC = () => {
                 </Link>
                 <Button type="submit">Login</Button>
               </CardFooter>
-              <CardDescription className="text-black text-base">
+              <CardDescription className="text-black text-base -mt-3">
                 If you're not registered,{" "}
                 <a href="/signup" className="text-blue-500 underline">
                   register here

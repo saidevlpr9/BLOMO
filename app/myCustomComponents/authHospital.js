@@ -24,52 +24,32 @@ const AuthHospitals = () => {
   const [password, setPassword] = useState("");
   const [acceptTerms, setAcceptTerms] = useState(false);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    if (
-      !name ||
-      !email ||
-      !phone ||
-      !registrationNumber ||
-      !address ||
-      !password ||
-      !acceptTerms
-    ) {
+    if (!name || !email || !phone || !registrationNumber || !address || !password || !acceptTerms) {
       alert("Please fill out all fields and accept terms.");
       return;
     }
 
-    try {
-      const res = await fetch("api/hospitalRegister", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          phone,
-          registrationNumber,
-          address,
-          password,
-        }),
-      });
+    const hospitalData = {
+      name,
+      email,
+      phone,
+      registrationNumber,
+      address,
+      password,
+    };
+    
+    localStorage.setItem("hospitalData", JSON.stringify(hospitalData));
 
-      if (res.ok) {
-        setName("");
-        setEmail("");
-        setPhone("");
-        setRegistrationNumber("");
-        setAddress("");
-        setPassword("");
-        setAcceptTerms(false);
-        alert("Registration successful!");
-      } else {
-        console.log("User Registration failed");
-      }
-    } catch (error) {
-      console.log("Error During Registration", error);
-    }
+    setName("");
+    setEmail("");
+    setPhone("");
+    setRegistrationNumber("");
+    setAddress("");
+    setPassword("");
+    setAcceptTerms(false);
+    alert("Registration successful! Your application is under review will get back to you soon");
   };
 
   return (

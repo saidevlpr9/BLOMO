@@ -1,5 +1,7 @@
 
 import BlogCard from "../myCustomComponents/blogCard";
+import BlogImage1 from "../assets/blog1.jpg"
+import BlogImage2 from "../assets/blog_2.jpeg"
 import Link from "next/link";
 const BlogsPage = ()=>{
   return(
@@ -10,8 +12,12 @@ const BlogsPage = ()=>{
     </h1>
     </div>
     <Link href="/Why-Blood-Donation-is-Important">
-    <BlogCard heading={" Why Blood Donation is Important"}/>
+    <BlogCard heading={" Why Blood Donation is Important"} blogImage={BlogImage1.src}/>
     </Link>
+    <Link href="/The-Lifesaving-Act">
+    <BlogCard heading={" The Lifesaving Act"} blogImage={BlogImage2.src}/>
+    </Link>
+
     </>
   )
 }

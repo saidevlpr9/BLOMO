@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Confetti from '../myCustomComponents/confetti'; 
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
@@ -30,52 +31,78 @@ const AuthDonor = () => {
   const [address, setAddress] = useState("");
   const [password, setPassword] = useState("");
   const [acceptTerms, setAcceptTerms] = useState(false);
+  const [isLoading, setIsLoading] = useState(false); 
+  const [isConfettiVisible, setIsConfettiVisible] = useState(false); 
+  const [errorMessage, setErrorMessage] = useState(""); 
 
-  const handleSubmit = async (event) => {
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(String(email).toLowerCase());
+  };
+
+  const validatePhone = (phone) => {
+    const re = /^\d{10}$/; 
+    return re.test(String(phone));
+  };
+
+  const validatePassword = (password) => {
+
+    return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/.test(password);
+  };
+
+  const handleSubmit = (event) => {
     event.preventDefault();
-    if (
-      !name ||
-      !email ||
-      !phone ||
-      !bloodGroup ||
-      !address ||
-      !password ||
-      !acceptTerms
-    ) {
-      alert("Please fill out all fields and accept terms.");
+    
+
+    setErrorMessage("");
+
+    if (!name || !email || !phone || !bloodGroup || !address || !password || !acceptTerms) {
+      setErrorMessage("Please fill out all fields and accept terms.");
+      return;
+    }
+    
+    if (!validateEmail(email)) {
+      setErrorMessage("Please enter a valid email address.");
       return;
     }
 
-    try {
-      const res = await fetch("api/donorRegister", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          phone,
-          bloodGroup,
-          address,
-          password,
-        }),
-      });
+    if (!validatePhone(phone)) {
+      setErrorMessage("Please enter a valid phone number (10 digits).");
+      return;
+    }
 
-      if (res.ok) {
-        setName("");
-        setEmail("");
-        setPhone("");
-        setBloodGroup("");
-        setAddress("");
-        setPassword("");
-        setAcceptTerms(false);
-        alert("Registration successful!");
-      } else {
-        console.log("User Registration failed");
-      }
+    if (!validatePassword(password)) {
+      setErrorMessage("Password must be at least 8 characters, include one uppercase letter, one lowercase letter, and one number.");
+      return;
+    }
+
+    setIsLoading(true); 
+    try {
+
+      const donorData = {
+        name,
+        email,
+        phone,
+        bloodGroup,
+        address,
+        password,
+      };
+      localStorage.setItem("donorData", JSON.stringify(donorData));
+      
+      
+      setIsConfettiVisible(true);
+      setName("");
+      setEmail("");
+      setPhone("");
+      setBloodGroup("");
+      setAddress("");
+      setPassword("");
+      setAcceptTerms(false);
+      alert("Registration successful! Your application is under review will get back to you soon");
     } catch (error) {
       console.log("Error During Registration", error);
+    } finally {
+      setIsLoading(false); 
     }
   };
 
@@ -138,7 +165,6 @@ const AuthDonor = () => {
                 </SelectContent>
               </Select>
             </div>
-            {/* <FileUpload label={"Upload Your Aadhar Card"} /> */}
             <div className="flex flex-col space-y-1.5">
               <Label htmlFor="address">Enter Your Address</Label>
               <Textarea
@@ -169,13 +195,16 @@ const AuthDonor = () => {
               <Label htmlFor="terms">Accept terms and conditions</Label>
             </div>
           </div>
+          {errorMessage && <div className="text-red-500">{errorMessage}</div>}
           <CardFooter className="flex justify-between mt-3">
             <Link href="/">
               <Button variant="outline" type="button">
                 Cancel
               </Button>
             </Link>
-            <Button type="submit">Register</Button>
+            <Button type="submit" disabled={isLoading}>
+              {isLoading ? "Loading..." : "Register"}
+            </Button>
           </CardFooter>
           <CardDescription>
             If already registered,{" "}
@@ -186,6 +215,7 @@ const AuthDonor = () => {
           </CardDescription>
         </form>
       </CardContent>
+      {isConfettiVisible && <Confetti />} {Hola}
     </Card>
   );
 };

@@ -80,6 +80,7 @@ const LandingPage = () => {
 
   return (
     <>
+
        <BackgroundBeamsWithCollision>
       <div className="mb-20 h-auto pt-28 ">
      
@@ -109,7 +110,7 @@ const LandingPage = () => {
           </p>
         </div>
         <div className="flex justify-center items-start h-auto w-auto">
-          <Link href="/signup">
+          <Link href="/login">
             <Button className="h-12 w-48 hover:cursor-pointer text-lg bg-[#8A0303] hover:bg-black">
               Save A Life
             </Button>
@@ -241,6 +242,7 @@ const LandingPage = () => {
           icon={lifeSaving}
         />
       </div>
+
     </>
   );
 };

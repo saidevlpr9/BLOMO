@@ -4,6 +4,7 @@ import Image from "next/image";
 const BlogsPage = ()=>{
   return(
     <>
+
     <div className="flex justify-center">
   
     </div>

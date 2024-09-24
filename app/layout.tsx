@@ -5,8 +5,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { siteConfig } from "@/config/site";
-import SessionWrapper from "./myCustomComponents/sessionWrapper"
-import Headers from "./myCustomComponents/header";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,6 +35,7 @@ const LandingLayout = ({ children }: { children: React.ReactNode }) => {
           className="h-auto bg-[#FDFDFD] pb-24 text-lg"
           style={{ fontFamily: "DosisMedium" }}
         >
+          {/* <Toaster position="bottom-center" /> */}
           <main>{children}</main>
         </div>
 

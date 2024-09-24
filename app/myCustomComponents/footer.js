@@ -7,7 +7,7 @@ export default function footer() {
         <div className="p-3 bg-[#8A0303]">
           <div>
             <div className="logo">
-              <h1 className="text-white mb-4 mt-4">Blomo</h1>
+              <h1 className="text-white">Blomo</h1>
               <p> Building Blood Bridges, Saving Lives</p>
               <p>© 2024 Blomo. All rights reserved.</p>
             </div>
@@ -21,15 +21,15 @@ export default function footer() {
         </div>
         <div className="flex justify-end items-end bg-[black]">
           <div
-            className="flex gap-3 text-lg hover:cursor-pointer p-1 "
+            className="flex gap-3 text-lg hover:cursor-pointer p-1 pr-4 "
             style={{ fontFamily: "DosisMedium" }}
           >
             <a href="#aboutUs" className="max-sm:hidden">About Us</a>
             <a href="#howItWorks" className="max-sm:hidden">How It Works</a>
             <a href="/blogs">Blog</a>
-            <a href="/contact">Contact</a>
+            {/* <a href="/contact">Contact</a>
             <a href="/privacyPolicy">Privacy Policy</a>
-            <a href="/termsOfService">Terms of Service</a>
+            <a href="/termsOfService">Terms of Service</a> */}
           </div>
         </div>
       </div>

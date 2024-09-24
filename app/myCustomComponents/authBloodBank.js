@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
+import Confetti from '../myCustomComponents/confetti'; 
 import { Button } from "@/components/ui/button";
-import { Badge } from "../../components/ui/badge";
-import { Checkbox } from "../../components/ui/checkbox";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
 import {
@@ -24,53 +24,55 @@ const AuthBloodBank = () => {
   const [address, setAddress] = useState("");
   const [password, setPassword] = useState("");
   const [acceptTerms, setAcceptTerms] = useState(false);
+  const [isConfettiVisible, setIsConfettiVisible] = useState(false); 
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
+    
+   
+    setErrorMessage("");
 
-    if (
-      !name ||
-      !email ||
-      !phoneNumber ||
-      !licenseNumber ||
-      !address ||
-      !password
-    ) {
-      alert("Please fill out all fields");
+    
+    if (!name || !email || !phoneNumber || !licenseNumber || !address || !password || !acceptTerms) {
+      setErrorMessage("Please fill out all fields and accept terms.");
       return;
     }
 
-    try {
-      const res = await fetch("api/bloodBankRegister", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          phoneNumber,
-          licenseNumber,
-          address,
-          password,
-        }),
-      });
-
-      if (res.ok) {
-        setName("");
-        setEmail("");
-        setPhoneNumber("");
-        setLicenseNumber("");
-        setAddress("");
-        setPassword("");
-        setAcceptTerms(false);
-        alert("Registration successful!");
-      } else {
-        console.log("User Registration failed");
-      }
-    } catch (error) {
-      console.log("Error During Registration", error);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setErrorMessage("Please enter a valid email address.");
+      return;
     }
+
+    const phoneRegex = /^[0-9]{10,15}$/;
+    if (!phoneRegex.test(phoneNumber)) {
+      setErrorMessage("Please enter a valid phone number (10-15 digits).");
+      return;
+    }
+
+    const bloodBankData = {
+      name,
+      email,
+      phoneNumber,
+      licenseNumber,
+      address,
+      password,
+    };
+    localStorage.setItem("bloodBankData", JSON.stringify(bloodBankData));
+
+
+    setName("");
+    setEmail("");
+    setPhoneNumber("");
+    setLicenseNumber("");
+    setAddress("");
+    setPassword("");
+    setAcceptTerms(false);
+
+  
+    setIsConfettiVisible(true);
+    alert("Registration successful! Your application is under review will get back to you soon");
   };
 
   return (
@@ -81,9 +83,10 @@ const AuthBloodBank = () => {
             Create An Account For{" "}
             <span className="text-[#8A0303]">BloodBank</span>
           </CardTitle>
-          <CardDescription>Be a Blomo Hero: Save lives,</CardDescription>
+          <CardDescription>Be a Blomo Hero: Save lives</CardDescription>
         </CardHeader>
         <CardContent>
+          {errorMessage && <div className="text-red-500">{errorMessage}</div>} {/* Error message display */}
           <form onSubmit={handleSubmit}>
             <div className="grid w-full items-center gap-4">
               <div className="flex flex-col space-y-1.5">
@@ -158,9 +161,9 @@ const AuthBloodBank = () => {
             </div>
             <CardFooter className="flex justify-between mt-3">
               <Link href="/">
-              <Button variant="outline" type="button">
-                Cancel
-              </Button>
+                <Button variant="outline" type="button">
+                  Cancel
+                </Button>
               </Link>
               <Button type="submit">Register</Button>
             </CardFooter>
@@ -174,6 +177,7 @@ const AuthBloodBank = () => {
           </form>
         </CardContent>
       </Card>
+      {isConfettiVisible && <Confetti />}
     </>
   );
 };
