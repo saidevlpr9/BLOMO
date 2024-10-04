@@ -12,7 +12,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Badge } from "../../components/ui/badge";
+// import { Badge } from "../../components/ui/badge";
 
 export default function SignUpPage() {
   const [type, setType] = useState("Hospital");

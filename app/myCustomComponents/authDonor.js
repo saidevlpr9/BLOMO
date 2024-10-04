@@ -98,7 +98,7 @@ const AuthDonor = () => {
       setAddress("");
       setPassword("");
       setAcceptTerms(false);
-      alert("Registration successful! Your application is under review will get back to you soon");
+      // alert("Registration successful! Your application is under review will get back to you soon");
     } catch (error) {
       console.log("Error During Registration", error);
     } finally {
@@ -203,7 +203,7 @@ const AuthDonor = () => {
               </Button>
             </Link>
             <Button type="submit" disabled={isLoading}>
-              {isLoading ? "Loading..." : "Register"}
+              <Confetti/>
             </Button>
           </CardFooter>
           <CardDescription>
@@ -215,7 +215,7 @@ const AuthDonor = () => {
           </CardDescription>
         </form>
       </CardContent>
-      {isConfettiVisible && <Confetti />} {Hola}
+      {isConfettiVisible && <Confetti />}
     </Card>
   );
 };

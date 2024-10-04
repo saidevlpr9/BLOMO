@@ -14,7 +14,7 @@ import {
 import { useToast } from "@/hooks/use-toast"
 
 import { Button } from "../../components/ui/button";
-import { ToastAction } from "../../components/ui/toast";
+// import { ToastAction } from "../../components/ui/toast";
 export default function AlertDialogDemo() {
   const { toast } = useToast();
   return (
@@ -41,13 +41,8 @@ export default function AlertDialogDemo() {
           <AlertDialogAction
             onClick={() => {
               toast({
-                title: "Scheduled: Catch up ",
-                description: "Friday, February 10, 2023 at 5:57 PM",
-                action: (
-                  <ToastAction altText="Goto schedule to undo">
-                    Undo
-                  </ToastAction>
-                ),
+                title: "Scheduled: Blood donation request received",
+                description: "A donor has been requested. We will let you know once we get the confirmation.",                
               });
             }}
           >

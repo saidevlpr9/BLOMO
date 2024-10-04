@@ -24,7 +24,7 @@ const AuthBloodBank = () => {
   const [address, setAddress] = useState("");
   const [password, setPassword] = useState("");
   const [acceptTerms, setAcceptTerms] = useState(false);
-  const [isConfettiVisible, setIsConfettiVisible] = useState(false); 
+  // const [isConfettiVisible, setIsConfettiVisible] = useState(false); 
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = (event) => {
@@ -165,7 +165,7 @@ const AuthBloodBank = () => {
                   Cancel
                 </Button>
               </Link>
-              <Button type="submit">Register</Button>
+              <Button type="submit"><Confetti/></Button>
             </CardFooter>
             <CardDescription>
               If already registered,{" "}
@@ -177,7 +177,7 @@ const AuthBloodBank = () => {
           </form>
         </CardContent>
       </Card>
-      {isConfettiVisible && <Confetti />}
+
     </>
   );
 };

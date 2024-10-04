@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import ConfettiCannon from "./confetti";
 
 const AuthHospitals = () => {
   const [name, setName] = useState("");
@@ -139,7 +140,7 @@ const AuthHospitals = () => {
                 Cancel
               </Button>
             </Link>
-            <Button type="submit">Register</Button>
+            <Button type="submit"><ConfettiCannon/></Button>
           </CardFooter>
           <CardDescription>
             If already registered,{" "}
